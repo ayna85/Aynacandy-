@@ -1,155 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayna Candy and Foods Production PLC | Sweetness from Adama, Ethiopia</title>
-<div class="language-switcher">
-  <button onclick="setLanguage('en')">English</button> | 
-  <button onclick="setLanguage('am')">አማርኛ</button>
-</div>
-    <!-- SEO -->
-    <meta name="description" content="Ayna Candy and Foods Production PLC is an Ethiopian candy manufacturer producing lollipops, chocolates, hard candy, and nougat.">
-    <meta name="keywords" content="Ayna Candy, Ethiopian Candy, Lollipop, Chocolate, Nougat, Food Production PLC">
-    <meta name="author" content="Ayna Candy and Foods Production PLC">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayna Candy | Language Toggle Example</title>
 
-    <!-- Google AdSense (ADD AFTER APPROVAL) -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
-     crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playball&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Noto Sans Ethiopic', sans-serif; padding: 20px; }
+    .language-switcher button {
+      background: #f2f2f2;
+      border: 1px solid #ccc;
+      padding: 5px 10px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+    .language-switcher button:hover { background: #ddd; }
+  </style>
 </head>
 <body>
 
-<!-- Simple top navigation for AdSense -->
-<nav style="text-align:center; padding:10px; background:#f2f2f2;">
-    <a href="index.html">Home</a> |
-    <a href="privacy.html">Privacy Policy</a>
+<!-- Language Switcher -->
+<div class="language-switcher">
+  <button onclick="setLanguage('en')">English</button>
+  <button onclick="setLanguage('am')">አማርኛ</button>
+</div>
+
+<!-- Hero Section -->
+<section id="home">
+  <h2 id="hero-title">Taste the Joy. Taste Ayna.</h2>
+  <p id="hero-text">Ayna Candy and Foods Production PLC delivers high-quality sweets including lollipops, chocolates, hard candy, and nougat.</p>
+  <a href="#products" id="hero-cta">EXPLORE OUR SWEETS</a>
+</section>
+
+<!-- Menu -->
+<nav>
+  <a href="#home" id="menu-home">Home</a> |
+  <a href="#products" id="menu-products">Products</a> |
+  <a href="#quality" id="menu-quality">Quality</a> |
+  <a href="#contact" id="menu-contact">Contact</a> |
+  <a href="about.html" id="menu-about">About</a> |
+  <a href="privacy.html" id="menu-privacy">Privacy Policy</a>
 </nav>
 
-<header>
-    <div class="container">
-        <h1 class="logo">AYNA</h1>
-        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#quality">Quality</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<body>
+<script>
+const translations = {
+  "en": {
+    "hero_title": "Taste the Joy. Taste Ayna.",
+    "hero_text": "Ayna Candy and Foods Production PLC delivers high-quality sweets including lollipops, chocolates, hard candy, and nougat.",
+    "hero_cta": "EXPLORE OUR SWEETS",
+    "menu_home": "Home",
+    "menu_products": "Products",
+    "menu_quality": "Quality",
+    "menu_contact": "Contact",
+    "menu_about": "About",
+    "menu_privacy": "Privacy Policy"
+  },
+  "am": {
+    "hero_title": "ጣፋጭ ማዳን። አይናን ይጠብቁ።",
+    "hero_text": "አይና ኬንዲ እና ምግብ ማምረቻ ከአዳማ የተለየ እና ጥራት ያለው ምርት ይሰጣል።",
+    "hero_cta": "ምርቶቻችንን ይመልከቱ",
+    "menu_home": "መነሻ",
+    "menu_products": "ምርቶች",
+    "menu_quality": "ጥራት",
+    "menu_contact": "አግኙን",
+    "menu_about": "ስለእኛ",
+    "menu_privacy": "የግላዊነት ፖሊሲ"
+  }
+};
 
-<header>
-    <div class="container">
-        <h1 class="logo">AYNA</h1>
-        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#quality">Quality</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+function setLanguage(lang) {
+  document.getElementById("hero-title").innerText = translations[lang].hero_title;
+  document.getElementById("hero-text").innerText = translations[lang].hero_text;
+  document.getElementById("hero-cta").innerText = translations[lang].hero_cta;
 
-<section id="home" class="hero">
-    <div class="hero-content">
-        <h2>Taste the Joy. Taste Ayna.</h2>
-        <p>
-            Ayna Candy and Foods Production PLC is a proudly Ethiopian manufacturer
-            delivering high-quality sweets including lollipops, chocolates, hard candy,
-            and traditional nougat. Our mission is to bring joy through safe, delicious,
-            and affordable products.
-        </p>
-        <a href="#products" class="cta-button">EXPLORE OUR SWEETS</a>
-    </div>
-</section>
+  document.getElementById("menu-home").innerText = translations[lang].menu_home;
+  document.getElementById("menu-products").innerText = translations[lang].menu_products;
+  document.getElementById("menu-quality").innerText = translations[lang].menu_quality;
+  document.getElementById("menu-contact").innerText = translations[lang].menu_contact;
+  document.getElementById("menu-about").innerText = translations[lang].menu_about;
+  document.getElementById("menu-privacy").innerText = translations[lang].menu_privacy;
+}
+</script>
 
-<section id="products" class="products">
-    <div class="container">
-        <h3>Our Delicious Product Range</h3>
-        <div class="product-grid">
-
-            <div class="product-card">
-                <img src="lollipops.jpg" alt="Ayna Lollipops" class="product-img">
-                <h4>Lollipops</h4>
-                <p>Colorful, fun, and flavorful lollipops made with quality ingredients.</p>
-                <p class="code">Codes: AYNA-LC-**</p>
-            </div>
-
-            <div class="product-card">
-                <img src="chocolate.jpg" alt="Ayna Chocolate" class="product-img">
-                <h4>Chocolate</h4>
-                <p>Premium milk and dark chocolate bars with rich cocoa taste.</p>
-                <p class="code">Codes: AYNA-CB-**</p>
-            </div>
-
-            <div class="product-card">
-                <img src="hard_candy.jpg" alt="Ayna Hard Candy" class="product-img">
-                <h4>Hard Candy</h4>
-                <p>Refreshing fruit and mint flavored hard candies for all ages.</p>
-                <p class="code">Codes: AYNA-HC-**</p>
-            </div>
-
-            <div class="product-card">
-                <img src="nougat.jpg" alt="Ayna Nougat Candy" class="product-img">
-                <h4>Nougat Candy (Menut)</h4>
-                <p>Traditional Ethiopian nougat with honey and nuts.</p>
-                <p class="code">Codes: AYNA-NC-**</p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section id="quality" class="quality">
-    <div class="container">
-        <h3>Our Commitment to Quality</h3>
-        <p>
-            Our factory in Adama, Ethiopia operates under strict hygiene and quality
-            standards. Every product is carefully produced to meet safety, taste,
-            and consistency expectations.
-        </p>
-        <div class="features-list">
-            <p>✓ Locally Sourced Ingredients</p>
-            <p>✓ Modern Production Facility</p>
-            <p>✓ Quality Control & Food Safety</p>
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="contact">
-    <div class="container">
-        <h3>Contact Us</h3>
-        <p><strong>Address:</strong> Adama, Ethiopia</p>
-        <p><strong>Phone:</strong> 0927 267 750</p>
-        <p><strong>Email:</strong> abdiu3725@gmail.com</a></p>
-        <p>Wholesale and distribution partnerships are welcome.</p>
-    </div>
-</section>
-
-<footer>
-    <div class="container">
-        <p>&copy; 2026 Ayna Candy and Foods Production PLC. All Rights Reserved.</p>
-        <p>
-            <a href="privacy.html">Privacy Policy</a> |
-            <a href="terms.html">Terms & Conditions</a> |
-            <a href="about.html">About Us</a>
-        </p>
-    </div>
-</footer>
-
-<script src="script.js"></script>
 </body>
 </html>
