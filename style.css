@@ -1,3 +1,10 @@
+.product-img {
+    width: 100%;       /* Makes the image fit inside the card */
+    max-width: 300px;  /* Prevents it from getting too big */
+    height: 200px;     /* Keeps all images the same height */
+    object-fit: cover; /* Crops the image perfectly so it doesn't look stretched */
+    border-radius: 8px;/* Rounds the corners for a modern look */
+}
 /* --- 1. Global Styles and Colors --- */
 :root {
     --color-pink: #FF00AA; /* Ayna Pink */
