@@ -3,133 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayna Candy and Foods Production PLC | Sweetness from Adama, Ethiopia</title>
+    <title>Ayana Candy | Purity & Sweetness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playball&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-pink: #FF00AA;
+            --color-green: #99CC00;
+            --color-brown: #4E2C1F;
+            --color-cream: #FEFEF0;
+            --color-gold: #FFD700;
+            --white: #ffffff;
+        }
 
-    <!-- SEO -->
-    <meta name="description" content="Ayna Candy and Foods Production PLC is an Ethiopian candy manufacturer producing lollipops, chocolates, hard candy, and nougat.">
-    <meta name="keywords" content="Ayna Candy, Ethiopian Candy, Lollipop, Chocolate, Nougat, Food Production PLC">
-    <meta name="author" content="Ayna Candy and Foods Production PLC">
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: var(--color-cream);
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
 
-    <!-- Google AdSense (ADD AFTER APPROVAL) -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
-     crossorigin="anonymous"></script>
+        /* Navigation */
+        header {
+            background: var(--white);
+            padding: 10px 5%;
+            border-bottom: 3px solid var(--color-pink);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
 
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playball&display=swap" rel="stylesheet">
+        .logo { 
+            font-family: 'Playball', cursive;
+            font-size: 2rem;
+            color: var(--color-brown);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--color-brown);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-left: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('IMG_20260206_215427_562.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 { font-family: 'Playball', cursive; font-size: 4rem; margin-bottom: 10px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; }
+
+        /* Story Section */
+        .story-section { padding: 60px 10%; background: var(--white); text-align: center; }
+        .story-section h2 { font-family: 'Playball', cursive; font-size: 2.5rem; color: var(--color-pink); margin-bottom: 20px; }
+        .story-section p { max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: #555; }
+
+        /* Product Gallery */
+        .products-container { padding: 60px 5%; }
+        .products-container h2 { text-align: center; font-family: 'Playball', cursive; font-size: 2.5rem; margin-bottom: 40px; color: var(--color-brown); }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid var(--color-green);
+            transition: transform 0.3s ease;
+        }
+        .card:hover { transform: translateY(-10px); }
+
+        .card img { width: 100%; height: 280px; object-fit: cover; }
+        .card-info { padding: 20px; text-align: center; }
+        .card-info h3 { color: var(--color-pink); font-family: 'Playball', cursive; font-size: 1.6rem; margin-bottom: 5px; }
+        .card-info p { font-size: 0.9rem; color: #777; font-weight: 600; }
+
+        /* Order Form */
+        .order-section { padding: 80px 5%; background: var(--white); }
+        .contact-form {
+            background: var(--color-cream);
+            padding: 40px;
+            border-radius: 30px;
+            border: 3px solid var(--color-pink);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact-form h2 { text-align: center; font-family: 'Playball', cursive; font-size: 2.5rem; color: var(--color-brown); margin-bottom: 10px; }
+        
+        .form-group { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+
+        .btn {
+            background-color: var(--color-pink);
+            color: var(--white);
+            padding: 18px;
+            border: none;
+            border-radius: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+        }
+        .btn:hover { background-color: var(--color-brown); }
+
+        /* Footer */
+        footer {
+            background: var(--color-brown);
+            color: var(--white);
+            text-align: center;
+            padding: 50px 5%;
+        }
+        .footer-info { margin-bottom: 20px; }
+        .footer-info p { margin: 5px 0; }
+        .copyright { opacity: 0.5; font-size: 0.8rem; margin-top: 20px; }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.8rem; }
+            header { flex-direction: column; gap: 10px; }
+            nav a { margin: 0 5px; font-size: 0.7rem; }
+        }
+    </style>
 </head>
-
 <body>
-<div class="product-card">
-    <img src="candy1/lollipops.jpg" alt="Ayna Lollipops" class="product-img">
-    
-    <h4>candy1/Lollipops</h4>
-    <p class="code">Codes: AYNA-LC-01</p>
-</div>
 
-<header>
-    <div class="container">
-        <h1 class="logo">AYNA</h1>
-        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#quality">Quality</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-            </ul>
+    <header>
+        <div class="logo">Ayana Candy</div>
+        <nav>
+            <a href="#about">Story</a>
+            <a href="#products">Products</a>
+            <a href="#order">Order Now</a>
         </nav>
-    </div>
-</header>
+    </header>
 
-<section id="home" class="hero">
-    <div class="hero-content">
-        <h2>Taste the Joy. Taste Ayna.</h2>
+    <section class="hero">
+        <h1>Sweetest Moments</h1>
+        <p>Premium Candy & Food Production</p>
+    </section>
+
+    <section class="story-section" id="about">
+        <h2>Our Story</h2>
         <p>
-            Ayna Candy and Foods Production PLC is a proudly Ethiopian manufacturer
-            delivering high-quality sweets including lollipops, chocolates, hard candy,
-            and traditional nougat. Our mission is to bring joy through safe, delicious,
-            and affordable products.
-        </p>
-        <a href="#products" class="cta-button">EXPLORE OUR SWEETS</a>
-    </div>
-</section>
+            Founded in <strong>Adama</strong>, Ayana Candy and Food Production Company began with a simple mission: to bring high-quality, delicious confections to every home in Ethiopia. 
+            We combine traditional sweet-making secrets with modern, hygienic production to create candies that are not just treats, but moments of joy. 
+            From our famous fruit pops to our signature lollipops, every product is crafted with love and purityAyana Candy and Food Production በጥራት፣ በንፁህነት እና በታማኝነት የተመሰረተ ዘመናዊ የከንዴ እና የምግብ አምራች ኩባንያ ነው። ኩባንያችን የተመሰረተው የኢትዮጵያ ገበያ ላይ ከፍተኛ ጥራት ያለው እና ተወዳጅ የሆነ የከንዴ እና የምግብ ምርት ለማቅረብ በግልጽ ራዕይ ነው።
+እኛ ምርት ብቻ አንሰራም — ደስታ፣ ጥራት እና እምነት እንፈጥራለን።
+2.
 
-<section id="products" class="products">
-    <div class="container">
-        <h3>Our Delicious Product Range</h3>
+ራዕይ (Vision)
+በኢትዮጵያ ውስጥ በጥራት የታወቀ እና በአፍሪካ ገበያ የሚወዳደር የከንዴ እና የምግብ አምራች መሆን።
+3. ተልዕኮ (Mission)
+ከፍተኛ ጥራት ያለው የከንዴ እና የምግብ ምርት ማምረት
+የደንበኞችን እምነት በታማኝነት ማስጠበቅ
+ዘመናዊ ቴክኖሎጂ መጠቀም
+ለሀገር ኢኮኖሚ እና ለስራ ፍጠር አስተዋፅኦ ማድረግ
+4. ዋና እሴቶቻችን (Core Values)
+ጥራት (Quality) – በሁሉም የምርት ሂደት ከፍተኛ መስፈርት እንከተላለን።
+ንፁህነት (Hygiene) – የጤና እና የንፁህነት መመሪያዎችን በጥብቅ እንጠብቃለን።
+ታማኝነት (Integrity) – ከደንበኞቻችን እና ከአጋሮቻችን ጋር በእምነት እንሰራለን።
+ፈጠራ (Innovation) – አዲስ ምርቶችን እና አዳዲስ ቴክኖሎጂዎችን እንጠቀማለን።
+5. 
+የምናመርታቸው ምርቶች
+Ayana Candy and Food Production የሚያመርታቸው ምርቶች፦
+ሀርድ ከንዴ (Hard Candy)
+ሎሊፖፕ (Lollipop)
+ቶፊ (Toffee)
+የፍራፍሬ ጣዕም ከንዴ
+ሌሎች የተለያዩ የምግብ ምርቶች
+ሁሉም ምርቶቻችን በተመረጡ ጥሬ እቃዎች እና በዘመናዊ ማሽኖች ይመረታሉ።
+6. 
+የጥራት ቁጥጥር
+ኩባንያችን በሁሉም የምርት ደረጃዎች የጥራት ቁጥጥር ሂደት አለው።
+        </p>
+    </section>
+
+    <section class="products-container" id="products">
+        <h2>Our Sweet Collection</h2>
         <div class="product-grid">
-
-            <div class="product-card">
-                <img src="candy1/lollipops.jpg" alt="Ayna Lollipops" class="product-img">
-                <h4>candy1/Lollipops</h4>
-                <p>Colorful, fun, and flavorful lollipops made with quality ingredients.</p>
-                <p class="code">Codes: AYNA-LC-**</p>
+            <div class="card">
+                <img src="IMG_20260206_215427_562.jpg" alt="Lollipop">
+                <div class="card-info">
+                    <h3>Ayana Lollipop</h3>
+                    <p>Signature Classic Swirl</p>
+                </div>
             </div>
-
-            <div class="product-card">
-                <img src="candy1/chocolate.jpg" alt="Ayna Chocolate" class="product-img">
-                <h4>candy1/Chocolate</h4>
-                <p>Premium milk and dark chocolate bars with rich cocoa taste.</p>
-                <p class="code">Codes: AYNA-CB-**</p>
+            <div class="card">
+                <img src="IMG_20260206_215427_498.jpg" alt="Desta">
+                <div class="card-info">
+                    <h3>Desta Candy</h3>
+                    <p>Pure Happiness in a Bite</p>
+                </div>
             </div>
-
-            <div class="product-card">
-                <img src="hard_candy.jpg" alt="Ayna Hard Candy" class="product-img">
-                <h4>Hard Candy</h4>
-                <p>Refreshing fruit and mint flavored hard candies for all ages.</p>
-                <p class="code">Codes: AYNA-HC-**</p>
+            <div class="card">
+                <img src="IMG_20260206_215426_797.jpg" alt="Ayana Pop">
+                <div class="card-info">
+                    <h3>Ayana Pop</h3>
+                    <p>The Original Favorite</p>
+                </div>
             </div>
-
-            <div class="product-card">
-                <img src="nougat.jpg" alt="Ayna Nougat Candy" class="product-img">
-                <h4>Nougat Candy (Menut)</h4>
-                <p>Traditional Ethiopian nougat with honey and nuts.</p>
-                <p class="code">Codes: AYNA-NC-**</p>
+            <div class="card">
+                <img src="IMG_20260206_215427_173.jpg" alt="Mango Pop">
+                <div class="card-info">
+                    <h3>Ayna Mango Pop</h3>
+                    <p>Tropical Real Fruit Taste</p>
+                </div>
             </div>
-
+            <div class="card">
+                <img src="IMG_20260206_215427_003.jpg" alt="Fruit Pop">
+                <div class="card-info">
+                    <h3>Ayana Fruit Pop</h3>
+                    <p>Assorted Nature Flavors</p>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="quality" class="quality">
-    <div class="container">
-        <h3>Our Commitment to Quality</h3>
-        <p>
-            Our factory in Adama, Ethiopia operates under strict hygiene and quality
-            standards. Every product is carefully produced to meet safety, taste,
-            and consistency expectations.
-        </p>
-        <div class="features-list">
-            <p>✓ Locally Sourced Ingredients</p>
-            <p>✓ Modern Production Facility</p>
-            <p>✓ Quality Control & Food Safety</p>
+    <section class="order-section" id="order">
+        <div class="contact-form">
+            <h2>Place an Order</h2>
+            <p style="text-align: center; color: #666;">Contact Ayana Food Production directly
+            ቀጥታ ያግኙን ለጥያቄዎ ፈጣን ምላሽ እንሰጣለን</p>
+            
+            <form action="https://formspree.io/f/mlgwgzko" method="POST">
+                <div class="form-group">
+                    <input type="text" name="Name" placeholder="Full Name" required>
+                    <input type="email" name="Email" placeholder="Email Address" required>
+                    <input type="tel" name="Phone" placeholder="Phone Number" required>
+                    
+                    <select name="Product_Interest" required>
+                        <option value="" disabled selected>Select Product</option>
+                        <option value="Lollipop">Ayana Lollipop</option>
+                        <option value="Desta">Desta Candy</option>
+                        <option value="Ayana Pop">Ayana Pop</option>
+                        <option value="Mango Pop">Mango Pop</option>
+                        <option value="Fruit Pop">Fruit Pop</option>
+                        <option value="Wholesale">Bulk / Wholesale Inquiry</option>
+                    </select>
+                    
+                    <textarea name="Order_Details" rows="4" placeholder="How many packs do you need? (Include your Adama delivery address)" required></textarea>
+                    
+                    <button type="submit" class="btn">Send Order Request</button>
+                </div>
+            </form>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="contact" class="contact">
-    <div class="container">
-        <h3>Contact Us</h3>
-        <p><strong>Address:</strong> Adama, Ethiopia</p>
-        <p><strong>Phone:</strong> 0927 267 750</p>
-        <p><strong>Email:</strong> abdiu3725@gmail.com</a></p>
-        <p>Wholesale and distribution partnerships are welcome.</p>
-    </div>
-</section>
+    <footer>
+        <div class="logo" style="color: var(--color-gold); margin-bottom: 20px;">Ayana Candy</div>
+        <div class="footer-info">
+            <p><strong>Email:</strong> abdiu3725@gmail.com</p>
+            <p><strong>Phone:</strong> 0927 267 750</p>
+            <p><strong>Location:</strong> Adama, Ethiopia</p>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Ayana Candy and Food Production Company. All Rights Reserved.
+        </div>
+    </footer>
 
-<footer>
-    <div class="container">
-        <p>&copy; 2026 Ayna Candy and Foods Production PLC. All Rights Reserved.</p>
-        <p>
-            <a href="privacy.html">Privacy Policy</a> |
-            <a href="terms.html">Terms & Conditions</a> |
-            <a href="about.html">About Us</a>
-        </p>
-    </div>
-</footer>
-
-<script src="script.js"></script>
 </body>
 </html>
